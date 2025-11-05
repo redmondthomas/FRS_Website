@@ -1,0 +1,79 @@
+/* global reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  height: 100px; /* consistent size */
+  background: #0e8142;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  align-items: center; /* center lateraly */
+  justify-content: space-between;
+  padding: 0 30px;
+  position: sticky;
+  top: 0;
+}
+
+/* Home Logo */
+header .logo img {
+  height: 60px;  
+  width: auto; /* scale image while keeping header height */
+  cursor: pointer;
+}
+
+/* Navigation */
+header nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 15px;
+}
+
+header nav ul li a {
+  font-size: 1rem;
+  color: #7ae9da;
+}
+
+header nav ul li a:hover {
+  color: #d9ff00; /* hover colour */
+}
+
+header h1 {
+    text-align: center;
+    color: #7ae9da;
+}
+
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-image: url("images/background3.jpeg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: scroll;
+}
+
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 1em;
+    background: #bdc2c2;
+    font-size: small;
+}
+
+.hero {
+    text-align: center;
+    padding: 2em;
+    background: #e8f5e9;
+    opacity: 0.3;
+}
