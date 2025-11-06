@@ -14,7 +14,7 @@ header {
   align-items: center; /* center lateraly */
   justify-content: space-between;
   padding: 0 30px;
-  position: sticky;
+  position:static;
   top: 0;
 }
 
@@ -26,37 +26,46 @@ header .logo img {
 }
 
 /* Navigation */
-header nav ul {
+nav ul {
   list-style-type: none;
-  display: flex;
-  gap: 15px;
+  margin: 0;
+  padding: 0;
+  width: 200px;
+  background-color:  #68916c;
+  height: 100%; /* Full height */
+  position: fixed; /* Make it stick, even on scroll */
 }
 
-header nav ul li a {
+nav ul li a {
+  display: block;
   font-size: 1rem;
-  color: #7ae9da;
+  color: #fafafa;
+  background-color: #68916c;
+  padding: 16px 16px;
+  text-decoration: none;
 }
 
-header nav ul li a:hover {
-  color: #d9ff00; /* hover colour */
-}
-
-header h1 {
-    text-align: center;
-    color: #7ae9da;
+nav ul li a:hover {
+    background-color: #555555;
+    opacity: 0.8;
+    color: #d9ff00; /* hover colour */
 }
 
 
+div{
+    margin-left: 200px;
+}
 
 
 body {
     display: flex;
-    flex-direction: column;
-    background-image: url("images/background3.jpeg");
+    flex-direction: column; 
     background-size: 100%;
     background-repeat: no-repeat;
     background-position: right top;
     background-attachment: scroll;
+    background-color: #d4ddc0;
+    /* background-image: url("images/background3.jpeg"); */
 }
 
 
@@ -75,5 +84,18 @@ footer {
     text-align: center;
     padding: 2em;
     background: #e8f5e9;
-    opacity: 0.3;
+    opacity: 0.9;
+    margin-left: 200px;
+}
+
+.text {
+    position: relative;
+    margin-left: 25%;
+    padding: 1px 16px;
+    height: 1000px;
+}
+
+.scale img {
+    width: auto;
+    vertical-align: bottom;
 }
