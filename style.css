@@ -9,18 +9,20 @@ header {
   width: 100%;
   height: 100px; /* consistent size */
   background: #0e8142;
-  border-bottom: 1px solid #ddd;
   display: flex;
   align-items: center; /* center lateraly */
   justify-content: space-between;
   padding: 0 30px;
-  position:static;
+  position: fixed;
   top: 0;
+  z-index: 1000; /* make sure header is on top */
+
+
 }
 
 /* Home Logo */
 header .logo img {
-  height: 60px;  
+  height: 60px;
   width: auto; /* scale image while keeping header height */
   cursor: pointer;
 }
@@ -31,9 +33,10 @@ nav ul {
   margin: 0;
   padding: 0;
   width: 200px;
-  background-color:  #68916c;
+  background-color: #68916c;
   height: 100%; /* Full height */
   position: fixed; /* Make it stick, even on scroll */
+  top: 100px
 }
 
 nav ul li a {
@@ -46,56 +49,58 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    background-color: #555555;
-    opacity: 0.8;
-    color: #d9ff00; /* hover colour */
+  background-color: #555555;
+  opacity: 0.8;
+  color: #d9ff00; /* hover colour */
 }
 
 
-div{
-    margin-left: 200px;
+div {
+  margin-left: 200px;
 }
 
+main {
+  margin-top: 100px; /* Push content below header */
+}
 
 body {
-    display: flex;
-    flex-direction: column; 
-    background-size: 100%;
-    background-repeat: no-repeat;
-    background-position: right top;
-    background-attachment: scroll;
-    background-color: #d4ddc0;
-    /* background-image: url("images/background3.jpeg"); */
+  display: flex;
+  flex-direction: column;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: right top;
+  background-attachment: scroll;
+  background-color: #d4ddc0;
 }
 
 
 footer {
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    padding: 1em;
-    background: #bdc2c2;
-    font-size: small;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  padding: 1em;
+  background: #bdc2c2;
+  font-size: small;
 }
 
 .hero {
-    text-align: center;
-    padding: 2em;
-    background: #e8f5e9;
-    opacity: 0.9;
-    margin-left: 200px;
+  text-align: center;
+  padding: 2em;
+  background: #e8f5e9;
+  opacity: 0.9;
+  margin-left: 200px;
 }
 
 .text {
-    position: relative;
-    margin-left: 25%;
-    padding: 1px 16px;
-    height: 1000px;
+  position: relative;
+  margin-left: 25%;
+  padding: 1px 16px;
+  height: 1000px;
 }
 
 .scale img {
-    width: auto;
-    vertical-align: bottom;
+  width: auto;
+  vertical-align: bottom;
 }
