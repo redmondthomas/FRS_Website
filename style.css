@@ -8,7 +8,7 @@
 header {
   width: 100%;
   height: 100px; /* consistent size */
-  background: #0e8142;
+  background: #68916c;
   display: flex;
   align-items: center; /* center lateraly */
   justify-content: space-between;
@@ -27,70 +27,104 @@ header .logo img {
   cursor: pointer;
 }
 
-/* Navigation */
-nav ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  width: 200px;
+/* navigation menu */
+nav {
+  position: fixed;
+  top: 100px; /* under header */
+  left: 0;
+  width: 60px; /* collapsed width */
+  height: calc(100% - 100px);
   background-color: #68916c;
-  height: 100%; /* Full height */
-  position: fixed; /* Make it stick, even on scroll */
-  top: 100px
+  overflow: hidden;
+  transition: width 0.3s ease-in-out;
+  z-index: 999;
+}
+
+nav:hover {
+  width: 200px; /* expanded width */
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 nav ul li a {
   display: block;
-  font-size: 1rem;
+  align-items: center;
   color: #fafafa;
   background-color: #68916c;
   padding: 16px 16px;
   text-decoration: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
 }
 
 nav ul li a:hover {
   background-color: #555555;
-  opacity: 0.8;
   color: #d9ff00; /* hover colour */
 }
 
+/* nav images */
+nav ul li a .icon {
+  width: 32px;   /* small icon for collapsed view */
+  height: 32px;
+  margin-right: 0; /* no gap when collapsed */
+  transition: margin-right 0.3s ease-in-out;
+}
 
-div {
-  margin-left: 200px;
+/* nav text */
+nav ul li a .text {
+  margin-left: 0;
+  opacity: 0;             /* hidden when collapsed */
+  transition: opacity 0.3s ease-in-out, margin-left 0.3s ease-in-out;
+}
+
+/* on hover (expanded sidebar) */
+nav:hover ul li a .text {
+  margin-left: 12px;      /* gap between icon and text */
+  opacity: 1;             /* show text */
 }
 
 main {
   margin-top: 100px; /* Push content below header */
+  margin-left: 60px; /* Sidebar width */
+  padding: 20px;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+nav:hover ~ main {
+  margin-left: 200px; /* match expanded width */
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: right top;
-  background-attachment: scroll;
   background-color: #d4ddc0;
 }
 
 
 footer {
   position: fixed;
-  left: 0;
   bottom: 0;
-  width: 100%;
+  left: 60px; /* Align with main content */
+  width: calc(100% - 60px);
   text-align: center;
   padding: 1em;
   background: #bdc2c2;
   font-size: small;
+  transition: all 0.3s ease-in-out;
+}
+
+nav:hover ~ footer {
+  left: 200px;
+  width: calc(100% - 200px);
 }
 
 .hero {
   text-align: center;
   padding: 2em;
   background: #e8f5e9;
-  opacity: 0.9;
-  margin-left: 200px;
 }
 
 .text {
