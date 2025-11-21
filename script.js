@@ -4,10 +4,16 @@ document.getElementById("header").innerHTML = `
     <a class="logo" href="index.html">
         <img src="images/home-logo.jpeg" alt="Site Logo">
     </a>
+
+    <div class="searchbar">
+        <input type="text" name="searchtext" placeholder="Type here...">
+        <input type="submit" value="Search">
+    </div>
 </header>
 `;
 
-// NAVIGATION
+
+
 document.getElementById("nav").innerHTML = `
 <nav>
   <ul>
@@ -36,7 +42,7 @@ document.getElementById("nav").innerHTML = `
 `;
 
 
-// FOOTER
+
 document.getElementById("footer").innerHTML = `
 <footer>
     <p>&copy; 2025 FRS Farm Relief Services</p>
