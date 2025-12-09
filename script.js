@@ -51,50 +51,31 @@ document.getElementById("footer").innerHTML = `
 
 //search
 document.addEventListener("DOMContentLoaded", () => {
-  const searchInput = document.querySelector(".searchbar input[type='text']");
-  if (!searchInput) return;
+    const searchInput = document.querySelector(".searchbar input[type='text']");
+    if (!searchInput) return;
 
-  function removeHighlights(element) {
-    const highlighted = element.querySelectorAll("mark.search-highlight");
-    highlighted.forEach(el => {
-      el.outerHTML = el.innerText;
-    });
-  }
-
-  function highlightText(element, term) {
-    const regex = new RegExp(`(${term})`, "gi");
-
-    element.childNodes.forEach(node => {
-      if (node.nodeType === 3) { 
-        const newHTML = node.textContent.replace(regex, `<mark class="search-highlight">$1</mark>`);
-        if (newHTML !== node.textContent) {
-          const span = document.createElement("span");
-          span.innerHTML = newHTML;
-          node.replaceWith(span);
-        }
-      } else {
-        highlightText(node, term);
-      }
-    });
-  }
-
-  searchInput.addEventListener("input", () => {
-    const term = searchInput.value.toLowerCase().trim();
     const searchableArea = document.querySelector(".searchable");
     if (!searchableArea) return;
 
-    const items = searchableArea.querySelectorAll("h1, h2, h3, p, li, .service-card");
+    const originalHTML = searchableArea.innerHTML;
 
-    items.forEach(item => {
-      removeHighlights(item); // always clear old highlights
+    searchInput.addEventListener("input", () => {
+        const term = searchInput.value.trim().toLowerCase();
 
-      if (term === "") return; // if empty, stop
+        searchableArea.innerHTML = originalHTML;
 
-      if (item.innerText.toLowerCase().includes(term)) {
-        highlightText(item, term);
-      }
+        if (term === "") return; // nothing to highlight
+
+        const items = searchableArea.querySelectorAll("h1, h2, h3, p, li, label, .service-card");
+
+        items.forEach(item => {
+            const text = item.innerText.toLowerCase();
+            if (!text.includes(term)) return;
+
+            const regex = new RegExp(`(${term})`, "gi");
+            item.innerHTML = item.innerHTML.replace(regex, `<mark class="search-highlight">$1</mark>`);
+        });
     });
-  });
 });
 
 // booking
