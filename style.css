@@ -90,6 +90,7 @@ nav:hover ul li a .text {
 
 main {
   margin-top: 100px; /* Push content below header */
+  margin-bottom: 50px;
   margin-left: 60px; /* Sidebar width */
   padding: 20px;
   transition: margin-left 0.3s ease-in-out;
@@ -105,6 +106,14 @@ body {
   font-family: Arial, sans-serif;
 }
 
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #2E2E2E;
+  border-radius: 6px;
+  resize: vertical;
+  font-size: 1em;
+}
 
 footer {
   position: fixed;
@@ -247,4 +256,206 @@ nav:hover ~ footer {
   border: 1px solid #2E2E2E;
   border-radius: 0 25px 25px 0;
   cursor: pointer;
+}
+
+mark.search-highlight {
+    background: yellow;
+    color: black;
+    padding: 0 2px;
+    border-radius: 3px;
+}
+
+ 
+.booking-details {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  font-size: 1.1em;
+}
+
+form {
+  max-width: 450px;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px;
+}
+
+.inline {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;
+  text-align: center;
+}
+
+.service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    padding: 20px 12%;
+}
+
+.service-card {
+    background: #ffffff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.service-img {
+    background: #e4e4e4;
+    height: 150px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 0.9em;
+    font-style: italic;
+}
+
+.service-card h3 {
+    color: #68916c;
+    margin-bottom: 10px;
+}
+
+.service-card p {
+    font-size: 1em;
+}
+
+/* Service card image area */
+.service-img {
+    width: 100%;
+    height: 180px; /* uniform height */
+    background: #e4e4e4;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+    font-size: 0.9em;
+    font-style: italic;
+    overflow: hidden; /* ensures images don’t spill out */
+}
+
+/* When actual images are added */
+.service-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* uniform size without stretching */
+    border-radius: 8px;
+}
+
+/* Banner below hero */
+.home-banner {
+    width: 100%;
+    height: 450px; /* adjust height as needed */
+    background-image: url("images/background2.jpeg");
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin: 30px 0;
+    border-radius: 25px;
+    overflow: hidden;
+}
+
+/* Centered overlay logo */
+.banner-logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.9;
+    size: auto;
+}
+
+/* Base button style */
+button,
+.button-link button {
+    background-color: #68916c;       /* FRS green */
+    color: #ffffff;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+/* Hover */
+button:hover,
+.button-link button:hover {
+    background-color: #557a59;        /* darker green */
+    transform: translateY(-2px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.18);
+}
+
+/* Active (pressed) */
+button:active,
+.button-link button:active {
+    transform: translateY(0px);
+    box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+}
+
+/* Focus state for accessibility */
+button:focus {
+    outline: 3px solid #b6d8b8;
+    outline-offset: 2px;
+}
+
+/* For <a> elements wrapping buttons */
+a.button-link,
+.button-link a {
+    text-decoration: none;
+}
+
+button.secondary {
+    background: transparent;
+    color: #313531;
+    border: 2px solid #68916c;
+}
+
+button.secondary:hover {
+    background: #68916c;
+    color: white;
 }
