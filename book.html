@@ -11,24 +11,118 @@
 
 <body>
     <!--header section-->
-    <div id="header"></div>
+    <header id="header"></header>
 
     <!--nav section-->
-    <div id="nav"></div>
+    <nav id="nav"></nav>
 
     <!--main section-->
-    <main>
+    <main class="searchable">
         <section class="hero">
             <h1>Book Farm Relief Services</h1>
             <p>Reliable farm support for over 40 years.</p>
         </section>
+
+        <div class="booking-details">
+            <h1>Book Service Form</h1>
+
+            <form id="userForm">
+
+                <!-- name -->
+                <div class="form-group">
+                    <label for="fullName">Full Name:</label>
+                    <input type="text" id="fullName" name="fullName" required>
+                </div>
+
+                <!-- email -->
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+
+                <!-- number -->
+                <div class="form-group">
+                    <label for="phoneNumber">Phone Number:</label>
+                    <input type="text" id="phoneNumber" name="phoneNumber" required>
+                </div>
+
+                <!-- county -->
+                <div class="form-group">
+                    <label for="county">Nearest Location:</label>
+                    <select id="county" required>
+                        <option value="">-- Select Location --</option>
+                        <option value="Cavan">Ballyjamesduff - Cavan, Longford, Westmeath, Louth, Meath, Kildare, Dublin
+                        </option>
+                        <option value="Clare">Ennis - Clare</option>
+                        <option value="Cork-Bandon">Bandon - Cork</option>
+                        <option value="Cork-Kanturk">Kanturk - Cork</option>
+                        <option value="Cork-Mallow">Mallow - Cork</option>
+                        <option value="Cork-Midleton">Midleton - Cork</option>
+                        <option value="Galway">Athenry - Galway</option>
+                        <option value="Kerry">Castleisland - Kerry</option>
+                        <option value="Kilkenny">Kilkenny - Carlow, Kilkenny</option>
+                        <option value="Limerick">Limerick - Limerick, North Cork</option>
+                        <option value="Monaghan">Ballyholey - Monaghan</option>
+                        <option value="Roscommon">Boyle - Leitrim, Mayo, Roscommon, Sligo</option>
+                        <option value="Tipperary North">Roscrea - Offaly, Laois, North Tipperary</option>
+                        <option value="Tipperary South">Cahir - South Tipperary</option>
+                        <option value="Waterford">Waterford</option>
+                        <option value="Wicklow">Wicklow</option>
+                        <option value="Donegal">Donegal, Monaghan & NI</option>
+                    </select>
+                </div>
+
+                <!-- date -->
+                <div class="form-group">
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+                </div>
+
+                <!-- services -->
+                <div class="form-group">
+                    <label><b>Select Services:</b></label>
+                    <label><input type="checkbox" name="services" value="reading"> Relief Milking</label>
+                    <label><input type="checkbox" name="services" value="sports"> Freeze Branding</label>
+                    <label><input type="checkbox" name="services" value="music"> General Farm Labour</label>
+                    <label><input type="checkbox" name="services" value="travel"> Hoof Care</label>
+                    <label><input type="checkbox" name="services" value="travel"> Calf Dehorning</label>
+                    <label><input type="checkbox" name="services" value="travel"> Pregnancy Scanning</label>
+                    <label><input type="checkbox" name="services" value="travel"> Animal Weighing</label>
+                    <label><input type="checkbox" name="services" value="travel"> Fencing</label>
+                    <label><input type="checkbox" name="services" value="travel"> Milk Recording</label>
+                    <label><input type="checkbox" name="services" value="travel"> Farm Plastic Collection</label>
+                </div>
+
+                <!-- message -->
+                <div class="form-group">
+                    <label for="extraMessage"><b>Don't see your service? Leave us an enquiry here:</b></label>
+                    <textarea id="extraMessage" name="extraMessage" rows="4" placeholder="We would love to hear from you..."></textarea>
+                </div>
+
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+
     </main>
 
     <!--footer section-->
-    <div id="footer"></div>
+    <footer id="footer"></footer>
+
+    <div id="confirmModal" class="modal">
+        <div class="modal-content">
+            <h2>Are these details correct?</h2>
+            <div id="confirmDetails"></div>
+            <button id="confirmYes">Confirm</button>
+            <button class="secondary" id="confirmNo">Back</button>
+        </div>
+    </div>
 
     <!--javascript-->
     <script src="script.js"></script>
+
+
 
 </body>
 
