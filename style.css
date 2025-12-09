@@ -265,6 +265,46 @@ mark.search-highlight {
     border-radius: 3px;
 }
 
+#userForm {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+#userForm input,
+#userForm select,
+#userForm textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+}
+
+#userForm label {
+    font-weight: 600;
+    color: #2E2E2E;
+}
+
+#userForm .form-group label {
+  line-height: 1.4;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+#userForm .form-group label input[type="checkbox"] {
+  vertical-align: middle;
+  margin-right: 8px;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-1px);
+}
+
+#userForm button {
+    margin-top: 10px;
+}
+
  
 .booking-details {
   max-width: 800px;
@@ -276,12 +316,22 @@ mark.search-highlight {
   font-size: 1.1em;
 }
 
+.booking-details h1,h2 {
+  text-align: center;
+  color: #68916c;
+}
+
 form {
   max-width: 450px;
 }
 
 .form-group {
   margin-bottom: 10px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
 }
 
 label {
@@ -303,6 +353,7 @@ label {
   width: 100%;
   height: 100%;
   background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(3px);
 }
 
 .modal-content {
@@ -314,7 +365,33 @@ label {
   padding: 20px;
   border-radius: 8px;
   width: 400px;
-  text-align: center;
+  text-align: left;
+  margin-left: 10%;
+}
+
+.modal-header {
+    background: #68916c;
+    padding: 18px;
+    color: white;
+    text-align: center;
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    background: #f5f5f5;
+}
+
+.modal-footer button {
+    margin-left: 10px;
+}
+
+#confirmDetails p {
+    margin: 8px 0;
+}
+
+#confirmDetails ul {
+    margin: 10px 0 0 20px;
 }
 
 .service-container {
@@ -322,6 +399,10 @@ label {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     padding: 20px 12%;
+}
+
+#confirmDetails strong {
+    color: #68916c;
 }
 
 .service-card {
