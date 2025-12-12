@@ -186,7 +186,7 @@ nav:hover ~ footer {
   border-radius: 8px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   font-size: 1.1em;
-  
+  word-wrap: break-word;
 }
 
 .contact-details h2,
@@ -404,6 +404,8 @@ label {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 20px;
     padding: 20px 12%;
+    padding-left: 16px;
+    padding-right: 16px;
 }
 
 #confirmDetails strong {
