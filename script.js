@@ -66,7 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (term === "") return; // nothing to highlight
 
-        const items = searchableArea.querySelectorAll("h1, h2, h3, p, li, label, .service-card");
+        const items = searchableArea.querySelectorAll("h1, h2, h3, p, li, label");
 
         items.forEach(item => {
             const text = item.innerText.toLowerCase();
