@@ -539,3 +539,11 @@ button.secondary:hover {
     background: #415c43;
     color: #ffffff;
 }
+
+.map-embed {
+    margin-top: 12px;
+    margin-bottom: 18px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+}
